@@ -1,0 +1,78 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  font-family: "Segoe UI";
+  font-size: 18px;
+  background-color: #FFFFFF;
+  align-items: center;
+}
+img {
+  width: 100px;
+}
+.partner-header {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  flex-direction: row;
+}
+.partners-list {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  align-items: center;
+  padding: 20px;
+  gap: 20px;
+  min-width: 700px;
+  list-style: none;
+}
+.partner-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid black;
+  min-width: 700px;
+  background-color: antiquewhite;
+}
+.partner-card:hover {
+  background-color: aquamarine;
+  cursor: pointer;
+}
+p {
+  margin: 0;
+}
+.partner-card-header {
+  font-size: 22px;
+  align-self: start;
+}
+.partner-data {
+  margin: 10px 40px;
+}
+.partner-discount {
+  margin-right: 70px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  min-width: 700px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+}
+input, textarea {
+  font-family: 'Segoe UI';
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+button {
+  border-radius: 5px;
+  height: 30px;
+  background-color: antiquewhite;
+  width: fit-content;
+  align-self: center;
+}
+button:hover {
+  background-color: aquamarine;
+}
