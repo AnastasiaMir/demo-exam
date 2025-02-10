@@ -13,6 +13,7 @@ const App= () => {
     (async () => {
       const res = await window.api.getPartners()
       setPartners(res)
+      console.log(partners)
     })()
   }, [])
 

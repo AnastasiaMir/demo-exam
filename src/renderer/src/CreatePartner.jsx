@@ -25,6 +25,7 @@ const CreatePartner= () => {
       await window.api.createPartner(createdPartner)
       setPartner(createdPartner)
       document.querySelector('form').reset()
+      console.log(createdPartner)
     }
 
   

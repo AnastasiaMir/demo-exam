@@ -18,7 +18,7 @@ const getPartners = async () => {
   try {
     const res = await client.query(`
     SELECT t1.*,
-company_types.type as company_type_name,
+company_types.name as company_type_name,
     CASE WHEN sum(t2.product_quantity) > 300000 THEN 15
     WHEN sum(t2.product_quantity) > 50000 THEN 10
     WHEN sum(t2.product_quantity) > 10000 THEN 5
@@ -27,7 +27,7 @@ company_types.type as company_type_name,
     from partners as T1
     LEFT JOIN purchases as T2 on T1.id = T2.partner_id
 	LEFT JOIN company_types on company_types.id = T1.company_type
-    GROUP BY T1.id, company_types.type
+    GROUP BY T1.id, company_types.name
     `)
     return res.rows
   } catch (e) {
@@ -50,7 +50,7 @@ const updatePartner = async (event, partner) => {
   try {
     await client.query(`
     UPDATE partners SET company_type = (
-      select id from company_types where type='${company_type_name}'
+      select id from company_types where name='${company_type_name}'
     ), name = '${name}', director = '${director}', email = '${email}', phone = '${phone}', address = '${address}', rating = ${parseInt(rating)}, tax_number = '${tax_number}'
     WHERE id = ${id};
     `)
@@ -76,7 +76,7 @@ const createPartner = async (event, partner) => {
   try {
     await client.query(`
     INSERT INTO partners (company_type, name, director, email, phone, address, rating, tax_number) VALUES 
-    ((select id from company_types where type='${company_type_name}'),'${name}','${director}','${email}',
+    ((select id from company_types where name='${company_type_name}'),'${name}','${director}','${email}',
     '${phone}','${address}', ${parseInt(rating)}, '${tax_number}');
     `)
     dialog.showMessageBox({ message: 'Партнер добавлен' })

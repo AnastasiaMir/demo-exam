@@ -26,6 +26,7 @@ const UpdatePartner= () => {
       await window.api.updatePartner(updatedPartner)
       setPartner(updatedPartner)
       document.querySelector('form').reset()
+      console.log(updatedPartner)
     }
 
   
