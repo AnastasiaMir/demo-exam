@@ -2,8 +2,6 @@ import {useState, useEffect} from 'react'
 import {useLocation, useNavigate} from 'react-router-dom'
 import {Link} from 'react-router'
 
-
-
 const CreatePartner= () => {
     useEffect(()=> {document.title = 'Создать нового партнера'}, [])
     const [partner, setPartner] = useState({})

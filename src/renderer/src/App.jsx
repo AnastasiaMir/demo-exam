@@ -1,9 +1,6 @@
 import {useState, useEffect} from 'react'
-
 import icon from './assets/icon.png'
 import { useNavigate, Link } from 'react-router'
-
-
 
 const App= () => {
   useEffect(()=> {document.title = 'Партнеры'}, [])
@@ -16,8 +13,6 @@ const App= () => {
       console.log(partners)
     })()
   }, [])
-
-
 
 return (
   <div className='container'>

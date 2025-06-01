@@ -2,8 +2,6 @@ import {useState, useEffect} from 'react'
 import {useLocation, useNavigate} from 'react-router-dom'
 import {Link} from 'react-router'
 
-
-
 const UpdatePartner= () => {
     useEffect(()=> {document.title = 'Обновить данные партнера'}, [])
     const location = useLocation()
@@ -28,8 +26,6 @@ const UpdatePartner= () => {
       document.querySelector('form').reset()
       console.log(updatedPartner)
     }
-
-  
 
 return (
   <div className='container'>
